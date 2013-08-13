@@ -17,22 +17,44 @@
     </head>
     <body>
         <div class="container">
-            <header class="name">
-                <h1><a href="#">Mathias Maier</a></h1>
-                <h4>Webdevelopment</h4>
-            </header>
-            <section class="contact">
-                <p>Write me an email at <a href="mailto:hello@mathiasmaier.de">hello@mathiasmaier.de</a></p>
-                <p>Or Tweet at me <a href="https://twitter.com/MathiasTim" target="_blank">@MathiasTim</a></p>
-            </section>
-            <footer>
-                <a href="/imprint.html">Imprint</a>
-            </footer>
+            <div class="wrapper pure-g-r">
+                <nav class="main_nav pure-menu pure-menu-open pure-menu-horizontal pure-u-1">
+                    <span id="toggle_nav">&#9776;</span>
+                    <ul>
+                        <li class="pure-menu-selected"><a href="">Me</a></li>
+                        <li><a href="">Work</a></li>
+                        <li><a href="">CV</a></li>
+                        <li><a href="">Technology</a></li>
+                        <li><a href="">Contact</a></li>
+                    </ul>
+                </nav>
+                <header class="name pure-u-1 pure-g-r">
+                    <div class="headlines pure-u-1-2">
+                        <h1><a href="#">Mathias Maier</a></h1>
+                        <h4><span>up-to-date</span> Webdevelopment</h4>
+                    </div>
+                    <div class="image_container pure-u-1-2">
+                        <img src="images/mathiasmaier_t.png" alt="me, Mathias Maier">
+                    </div>
+                </header>
+                <section class="contact pure-u-1">
+                    <p>Write me an email at <a href="mailto:hello@mathiasmaier.de">hello@mathiasmaier.de</a></p>
+                    <p>Or Tweet at me <a href="https://twitter.com/MathiasTim" target="_blank">@MathiasTim</a></p>
+                </section>
+                <footer class="pure-u-1">
+                    <a href="/imprint.html">Imprint</a>
+                </footer>
+            </div>
         </div>
 
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
+
+        <!-- build:js scripts/main.js -->
+        <script src="bower_components/jquery/jquery.js"></script>
+        <script src="scripts/main.js"></script>
+        <!-- endbuild -->
 
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
