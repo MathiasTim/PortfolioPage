@@ -3,18 +3,21 @@ jQuery(document).ready(function($) {
     var home = {
         init: function(){
             this.eventListeners();
-            this.resize();
+            console.log('Wanna check out the code? No problem, since this here is minified, visit https://github.com/MathiasTim/PortfolioPage');
         },
         eventListeners: function(){
-            $(window).resize(function(){
-            });
             $('#toggle_nav').on('click', function(){
                 $(this).siblings('ul').toggleClass('active');
             });
-        },
-
-        menu: function(){
-
+            $('.main_nav').on('click', 'a', function(){
+                $('.main_nav ul').toggleClass('active');
+                $('.main_nav li').removeClass('pure-menu-selected');
+                $(this).parent('li').addClass('pure-menu-selected');
+            });
+            $('.project').on('mouseover', function(){
+                $('.project').removeClass('active');
+                $(this).addClass('active');
+            });
         }
     };
 

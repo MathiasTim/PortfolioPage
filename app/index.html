@@ -8,7 +8,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Mathias Maier - Webdevelopment</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="format-detection" content="telephone=no" />
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css({.tmp,app}) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
@@ -19,31 +20,185 @@
         <div class="container">
             <div class="wrapper pure-g-r">
                 <nav class="main_nav pure-menu pure-menu-open pure-menu-horizontal pure-u-1">
-                    <span id="toggle_nav">&#9776;</span>
+                    <span id="toggle_nav" class="icon-menu"></span>
                     <ul>
-                        <li class="pure-menu-selected"><a href="">Me</a></li>
-                        <li><a href="">Work</a></li>
-                        <li><a href="">CV</a></li>
-                        <li><a href="">Technology</a></li>
-                        <li><a href="">Contact</a></li>
+                        <li class="pure-menu-selected"><a href="/#">about Me</a></li>
+                        <li><a href="#work">Work</a></li>
+                        <li><a href="#cv">CV</a></li>
+                        <li><a href="#technology">Technology</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="/imprint.html">Imprint</a></li>
                     </ul>
                 </nav>
-                <header class="name pure-u-1 pure-g-r">
-                    <div class="headlines pure-u-1-2">
+                <header id="about" class="pure-u-1 pure-g-r">
+                    <div class="info_container pure-u-1-3">
                         <h1><a href="#">Mathias Maier</a></h1>
                         <h4><span>up-to-date</span> Webdevelopment</h4>
+                        <ul class="social">
+                            <li>
+                                <a href="https://github.com/mathiastim" title="my github account" target="_blank">
+                                    <span aria-hidden="true" class="icon-github"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://careers.stackoverflow.com/mathiasmaier" title="my stackoverflow-careers account" target="_blank">
+                                    <span aria-hidden="true" class="icon-stackoverflow"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/mathiastim" title="my twitter account" target="_blank">
+                                    <span aria-hidden="true" class="icon-twitter"></span>
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="text">
+                            Hi, I'm Mathias, I love the web and its technologies.<br/>
+                            That's why I studied Interactive Media.<br/>
+                            A detailed CV you can find <a href="#cv">here</a>.<br/><br/>
+                            Recently I got my bachelor's degree,<br/>
+                            that's why I look for a job as a Webdeveloper.<br/>
+                            A selection of projects I've done you can find <a href="#work">here</a>.<br/><br/>
+                            So, if you are interested in an experienced teamplayer for Webtechnologies,<br/>
+                            drop me an email at <a href="mailto:hello@mathiasmaier.de">hello@mathiasmaier.de</a>.
+                        </p>
                     </div>
-                    <div class="image_container pure-u-1-2">
-                        <img src="images/mathiasmaier_t.png" alt="me, Mathias Maier">
+                    <div class="image_container pure-u-2-3">
+                        <img src="images/mathiasmaier.jpg" alt="me, Mathias Maier">
                     </div>
                 </header>
-                <section class="contact pure-u-1">
-                    <p>Write me an email at <a href="mailto:hello@mathiasmaier.de">hello@mathiasmaier.de</a></p>
-                    <p>Or Tweet at me <a href="https://twitter.com/MathiasTim" target="_blank">@MathiasTim</a></p>
+                <section id="work" class="pure-u-1">
+                    <h4 class="pure-u-1">Work/Projects</h4>
+                    <article class="project">
+                        <h5>Werkschau Website</h5>
+                        <img src="images/werkschau.jpg" alt="screenshot werkschau">
+                        <p class="description">The Website for the Werkschau exhibition 12/13 at University of Applied Sciences Augsburg.</p>
+                        <p class="technology"><b>Technology: </b>PHP, MySQL, Wordpress</p>
+                        <p class="link">
+                            <a href="http://werkschau.hs-augsburg.de/ws_12_13" target="_blank">werkschau.hs-augsburg.de</a>
+                        </p>
+                    </article>
+                    <article class="project">
+                        <h5>asana time track</h5>
+                        <img src="images/asanatimetrack.jpg" alt="screenshot asanatimetrack">
+                        <p class="description">An Open Source Tool, for time tracking with the popular project management webapp <a href="http://asana.com">asana</a>.</p>
+                        <p class="technology"><b>Technology: </b> PHP, MySQL, Sass, Bootstrap, jquery</p>
+                        <p class="link">
+                            <a href="https://github.com/codelovers/asana-time-track" target="_blank">github.com/asana-time-track</a>
+                        </p>
+                    </article>
+                    <article class="project active">
+                        <h5>getfedu Webapp</h5>
+                        <img src="images/fedu.jpg" alt="screenshot fedu">
+                        <p class="description">The new webapp for educational videos for developers. Completely writting in Javascript, frontend and server (node.js).</p>
+                        <p class="technology"><b>Technology: </b>Backbone.js, Node.js, MongoDB, Passport, Underscore.js, yeoman, grunt <a href="http://downloads.getfedu.com/tech_plakat.pdf" target="_blank"> and many more</a></p>
+                        <p class="link">
+                            <a href="https://getfedu.com" target="_blank">getfedu.com</a>
+                        </p>
+                    </article>
+                    <article class="project">
+                        <h5>chrome extension</h5>
+                        <img src="images/fedu-cxt.jpg" alt="screenshot fedu chrome extension">
+                        <p class="description">A little Chrome Extionsion for adding fast videos to <a href="https://getfedu.com">getfedu</a>. Under active development.</p>
+                        <p class="technology"><b>Technology: </b>Vanilla JS, jQuery, Yeoman-Chromeapp-Generator</p>
+                        <p class="link">
+                            <a href="https://github.com/getfedu/fedu-chrome-xt" target="_blank">github.com/getfedu</a>
+                        </p>
+                    </article>
+                    <article class="project">
+                        <h5>Wordpress Plugin</h5>
+                        <img src="images/zeltlager.jpg" alt="screenshot zeltlager">
+                        <p class="description">A Wordpress-Plugin for a Summercamp with a subscription service.</p>
+                        <p class="technology"><b>Technology:</b> PHP, MySQL, Wordpress</p>
+                        <p class="link">
+                            <a href="http://www.turngau-zeltlager.de/" target="_blank">turngau-zeltlager.de</a>
+                        </p>
+                    </article>
                 </section>
-                <footer class="pure-u-1">
-                    <a href="/imprint.html">Imprint</a>
-                </footer>
+                <section id="cv" class="pure-u-1 pure-g-r">
+                    <h4 class="pure-u-1">Curriculum Vitae</h4>
+                    <div class="cv_edu pure-u-1-2">
+                        <h5>Education</h5>
+                        <ul>
+                            <li><b>10&#47;2009 - 08&#47;2013:</b> Bachelor of Arts in Interactive Media, University of Applied Scienes Augsburg</li>
+                        </ul>
+                    </div>
+                    <div class="cv_work pure-u-1-2">
+                        <h5>Work</h5>
+                        <ul>
+                            <li><b>06&#47;2012 - 09&#47;2013:</b> Webdeveloper&#47;Co-Founder, <a href="http://codelovers.de" target="_blank">codelovers</a>, Augsburg</li>
+                            <li><b>08&#47;2011 - 02&#47;2012:</b> Junior Webdeveloper (internship semester), <a href="http://www.freakworks.de/" target="_blank">Freakworks</a>, Munich</li>
+                            <li><b>04&#47;2011 - 08&#47;2011:</b> Junior Webdeveloper, <a href="http://www.edvantage.de/" target="_blank">Edvantage</a>, Augsburg</li>
+                        </ul>
+                    </div>
+                </section>
+                <section id="technology" class="pure-u-1 pure-g-r">
+                    <h4 class="pure-u-1">Technology and Tools</h4>
+                    <p class="text pure-u-1">
+                        This technologies are just my personal charts, I appreciate their existance!<br/>
+                        Webdevelopment would be much harder without the proper technologies.<br/>
+                        This terms have no specific order.
+                    </p>
+                    <div class="pure-u-1-2">
+                        <h5>The fancy shit</h5>
+                        <ul>
+                            <li>Backbone.js</li>
+                            <li>Require.js</li>
+                            <li>Node.js</li>
+                            <li>MongoDB</li>
+                            <li>Sass&#47;Compass</li>
+                            <li>grunt</li>
+                            <li>yeoman</li>
+                            <li>bower</li>
+                            <li>Sublime Text</li>
+                        </ul>
+                    </div>
+                    <div class="pure-u-1-2">
+                        <h5>The more old-school, but also nice stuff</h5>
+                        <ul>
+                          <li>jQuery</li>
+                          <li>Modernizr</li>
+                          <li>Chrome (Browser&#47;Dev-Tools)</li>
+                          <li>git</li>
+                          <li>PHP</li>
+                          <li>Wordpress</li>
+                          <li>HTML5</li>
+                          <li>CSS3</li>
+                        </ul>
+                    </div>
+                    <div class="pure-u-1">
+                       <h5>Things, I'm about to learn, because we should never rest</h5>
+                       <ul>
+                           <li>Angular.js</li>
+                           <li>proper Unit-testing</li>
+                       </ul>
+                    </div>
+                </section>
+                <section id="contact" class="pure-u-1 pure-g-r">
+                    <h4 class="pure-u-1">Contact</h4>
+                    <div class="pure-u-1">
+                        <p>
+                            Write me an email to <a href="mailto:hello@mathiasmaier.de">hello@mathiasmaier.de</a><br/>
+                        </p>
+                        <p>Or visit one of my social media profiles:</p>
+                        <ul class="social">
+                            <li>
+                                <a href="https://github.com/mathiastim" title="my github account" target="_blank">
+                                    <span aria-hidden="true" class="icon-github"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://careers.stackoverflow.com/mathiasmaier" title="my stackoverflow-careers account" target="_blank">
+                                    <span aria-hidden="true" class="icon-stackoverflow"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/mathiastim" title="my twitter account" target="_blank">
+                                    <span aria-hidden="true" class="icon-twitter"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
             </div>
         </div>
 

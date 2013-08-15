@@ -1,10 +1,27 @@
 @import "compass/css3";
 @import "pure-min";
 
+@import "social-font";
 // Colors
 
-$blue: #0e90d2;
+$blue: rgb(14, 144, 210);
 $lightblue: rgb(103, 194, 240);
+$purple: rgb(128, 88, 165);
+$lightpurple: rgb(200, 131, 255);
+$green: rgb(94, 185, 94);
+$lightgreen: rgb(161, 240, 137);
+$red: rgb(221, 81, 76);
+$lightred: rgb(236, 164, 154);
+$orange: rgb(243, 123, 29);
+$lightorange: rgb(255, 190, 129);
+$yellow: rgb(250, 210, 50);
+$lightyellow: rgb(255, 240, 134);
+
+$blueshades1: #0FA5F2;
+$blueshades2: #0B7AB2;
+$blueshades3: #09608C;
+$blueshades4: #064565;
+
 
 
 * {
@@ -15,6 +32,7 @@ $lightblue: rgb(103, 194, 240);
 
 body {
     font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: 200;
     a {
         color: $blue;
         text-decoration: none;
@@ -22,23 +40,41 @@ body {
             color: lighten($blue, 10%);
         }
     }
+    b {
+        font-weight: 400;
+    }
+    h1 {
+        text-transform: uppercase;
+        font-size: 3.9em;
+        font-weight: 200;
+    }
+    h4 {
+        font-weight: 200;
+        font-size: 2em;
+    }
+    h5 {
+        font-weight: 300;
+        font-size: 1.2em;
+    }
 }
 
 .container {
     .main_nav {
         text-align: center;
         background-color: #dddddd;
+        position: fixed;
         #toggle_nav {
             cursor: pointer;
             display: block;
-            float: left;
             margin: 12px 0 0 10px;
+            width: 100%;
+            text-align: left;
         }
         ul {
             width: 100%;
-            margin: -35em 0 0 0;
+            margin: -40em 0 0 0;
             padding: 0;
-            @include transition(all 0.3s); // multiple: comma-delimited
+            @include transition(all 0.3s);
 
             &.active {
                 margin: 1em 0 0 0;
@@ -51,73 +87,169 @@ body {
             }
         }
     }
-    .name {
+    #about {
         text-align: center;
-        .headlines {
+        margin: 2em 0 0 0;
+        .info_container {
             h1 {
-                text-transform: uppercase;
-                font-size: 3.9em;
-                font-weight: 200;
                 margin-bottom: 0;
             }
             h4 {
-                margin-top: 0;
-                font-weight: 200;
-                font-size: 2em;
+                margin: 0;
                 span {
                     font-size: 0.6em;
                 }
             }
+            ul.social {
+                margin: 0.2em 0 0.5em 0;
+                padding: 0;
+                list-style: none;
+                font-size: 1.5em;
+                li {
+                    display: inline-block;
+                    padding: 0.2em 0.5em;
+                    margin: 0 0.2em 0 0;
+                }
+            }
+            .text {
+                padding: 0 0.5em;
+                font-size: 1.2em;
+                text-align: left;
+            }
         }
         .image_container {
+            vertical-align: bottom;
             img {
                 vertical-align: bottom;
+                max-height: 400px;
+            }
+        }
+    }
+    section {
+        font-weight: 300;
+        font-size: 1.2em;
+        line-height: 1.5em;
+        color: white;
+        padding: 0.5em 1em 1.5em 1em;
+        border-top:2em solid transparent;
+        margin: -2em 0 0 0;
+        @include background-clip(padding-box);
+        a {
+            color: $lightblue;
+            &:hover {
+                color: lighten($blue, 50%);
+            }
+        }
+        h4 {
+            margin: 0.5em 0 1em 0;
+            text-align: center;
+        }
+    }
+    #work {
+        padding: 0;
+        text-align: center;
+        background-color: $blueshades1;
+        a {
+            color: lighten($lightblue, 10%);
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        .project {
+            display: block;
+            padding: 1em 0;
+            width: 100%;
+            &:nth-child(odd) {
+                background-color: $blue;
+            }
+            &:nth-child(even) {
+                background-color: darken($blue, 5%);
+            }
+            h5 {
+                margin: 0 0 1em 0;
+            }
+            .description, .technology, .link {
+                text-align: left;
+                padding: 0.5em 1em;
+                margin: 0;
+                line-height: 1.2em;
+            }
+            img {
                 max-height: 350px;
             }
         }
     }
-    .contact {
-        background-color: $blue;
-        padding: 0.5em;
-        p {
-            font-weight: 300;
-            font-size: 1.2em;
-            line-height: 1.5em;
+    #cv {
+        a:hover {
+            text-decoration: underline;
+        }
+        background-color: $blueshades2;
+        h5, ul {
             margin: 0;
-            color: white;
+        }
+        .cv_edu, .cv_work {
+            margin: 1em 0 0 0;
+        }
+        b {
+            display: block;
+        }
+    }
+    #technology {
+        background-color: $blueshades3;
+        h5 {
+            margin: 1em 0 0.25em 0;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            li {
+                display: inline-block;
+                padding: 0.2em 0.5em;
+                margin: 0 0.2em 0.5em 0;
+                background-color: $blue;
+            }
+        }
+    }
+    #contact {
+        background-color: $blueshades4;
+        ul.social {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            li {
+                display: inline-block;
+                padding: 0.2em 0.5em;
+                margin: 0 0.2em 0 0;
+                background-color: $blue;
+            }
             a {
-                color: $lightblue;
+                color: white;
                 &:hover {
-                    color: lighten($blue, 10%);
+                    color: lighten($blue, 30%);
                 }
             }
         }
     }
     .imprint {
-        background-color: $blue;
-        padding: 0.5em;
-        p {
-            color: white;
-            font-weight: 200;
+        #about {
+            margin: 1em 0 0 0;
+            padding: 0.5em 1em 0 1em;
+            text-align: left;
+            font-size: 2em;
         }
-    }
-    footer {
-        margin: 1em 0;
-        a {
-            border-top: 1px solid $lightblue;
-            width: 30%;
-            display: block;
-            padding: 0.2em 0;
+        #imprint {
+            background-color: $blueshades1;
+            p {
+                color: white;
+            }
         }
     }
 }
 
 // Tablets and Desktops
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
     .container {
-        .image_container {
-            width: 25%;
-        }
         .main_nav {
             #toggle_nav {
                 display: none;
@@ -130,6 +262,53 @@ body {
                 li {
                     display: inline-block;
                     background-color: transparent;
+                }
+                &.active {
+                    margin: 0;
+                }
+            }
+        }
+        #about {
+            .image_container {
+                width: 25%;
+            }
+            .text {
+                margin: 0 auto 1em auto;
+                max-width: 17.5em;
+            }
+        }
+        #cv {
+            b {
+                display: inline;
+            }
+        }
+        #work {
+            .project {
+                float: left;
+                padding: 1em 0;
+                min-height: 33em;
+                width: 17%;
+                cursor: pointer;
+                @include transition(all 0.2s); // multiple: comma-delimited
+                &.active {
+                    width: 32%;
+                }
+            }
+        }
+        #technology {
+            .text {
+                width: 24em;
+                margin: 0 auto;
+                display: block;
+            }
+        }
+        #contact {
+            text-align: center;
+        }
+        .imprint {
+            #imprint {
+                p {
+                    @include columns(1em 3);
                 }
             }
         }
